@@ -4,7 +4,7 @@ namespace Repository
 {
     public class LibraryService
     {
-        
+
         private readonly IRepository _bookRepo;
 
         public LibraryService(IRepository bookRepo)
@@ -17,7 +17,7 @@ namespace Repository
             var book = _bookRepo.GetById(bookId);
             if (book == null || !book.IsAvailable)
             {
-                return false; 
+                return false;
             }
 
             book.IsAvailable = false;
@@ -25,3 +25,4 @@ namespace Repository
             return true;
         }
     }
+}
